@@ -188,57 +188,90 @@
 <header class="hero">
   <span class="badge">Privacy Policy</span>
   <h1>Online Shopping Assistant For AliExpress</h1>
-  <p class="updated">Last updated: 11 July 2026</p>
+  <p class="updated">Last updated: 12 August 2026</p>
 </header>
 
 <main class="wrap">
 
   <section class="summary">
     <p>Online Shopping Assistant for AliExpress ("the extension") helps you evaluate
-    products while shopping on AliExpress. We take your privacy seriously — in short:
-    <strong>the extension does not collect, store, or transmit any personal data, and it
-    has no analytics or tracking.</strong></p>
+    products while shopping on AliExpress. In short: <strong>the extension does not collect
+    an account, a profile, or any personally identifying information about you, and it
+    contains no analytics or tracking.</strong> The sections below describe exactly what it
+    reads and what leaves your browser.</p>
     <div class="chips">
-      <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No data collected</span>
+      <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No personal data collected</span>
       <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No tracking or analytics</span>
-      <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Everything stays on your device</span>
+      <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Runs only on AliExpress</span>
     </div>
   </section>
 
   <section class="card">
     <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>What the extension does</h2>
-    <p>When you open an AliExpress product or listing page, the extension:</p>
+    <p>When you open an AliExpress product, listing, cart or checkout page, the extension:</p>
     <ol>
       <li>Reads the page's <strong>publicly visible product information</strong> (such as
           rating, review count, review sentiment, and store feedback) directly in your
           browser.</li>
-      <li>Requests <strong>public product-review statistics</strong> from AliExpress's own
-          endpoint (<code>feedback.aliexpress.com</code>) to calculate a 0–10 quality
-          score.</li>
+      <li>Requests <strong>public product-review statistics</strong> for the product you are
+          viewing, so it can calculate a 0–10 quality score. See
+          <em>Requests through our servers</em> below for how that request travels.</li>
       <li>Displays that score, a seller-trust indicator, and a "safe to buy" summary on
           the page.</li>
+      <li>May add our affiliate code to AliExpress product links, and may show a notice if
+          another installed extension has replaced that code. See <em>Affiliate links</em>
+          below.</li>
     </ol>
-    <p>All of this happens locally in your browser. The product ID used to look up review
-    statistics is sent only to AliExpress itself — the same website you are already
-    visiting — and never to us or to any third party.</p>
+    <p>The extension runs <strong>only</strong> on AliExpress domains
+    (<code>aliexpress.com</code> and its regional variants, <code>aliexpress.ru</code>, and
+    <code>aliexpress.us</code>). It never runs on, reads, or accesses any other website.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></span>Requests through our servers</h2>
+    <p>To look up review statistics, the extension sends the <strong>product identifier</strong>
+    of the page you are viewing to AliExpress's public review endpoint
+    (<code>feedback.aliexpress.com</code>). That request is sent either directly from your
+    browser, or forwarded through relay servers we operate at
+    <code>crwler-*.ecomstal.com</code>. The relay exists for one technical reason: it spreads
+    the lookups across several network paths so AliExpress's anti-bot protection does not
+    rate-limit or challenge your shopping session.</p>
+    <p>What the relay receives is limited to <strong>the product identifier being looked
+    up</strong>. It receives no account information, no login state, no cookies from your
+    AliExpress session, no browsing history, and nothing that identifies you. As with any
+    request to any web server, our server sees the network (IP) address the request arrives
+    from; we do not use it to identify you, do not link it to any identity or profile, and do
+    not sell or share it.</p>
   </section>
 
   <section class="card">
     <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Data we collect</h2>
-    <p><strong>None.</strong> We do not collect, sell, share, or transmit any personal or
-    personally identifiable information. We do not use cookies, analytics, tracking
-    pixels, or any third-party service. We do not access your browsing history, location,
-    contacts, credentials, or activity on other websites. The extension only runs on
-    AliExpress pages (including regional domains such as aliexpress.ru).</p>
+    <p><strong>We do not collect, sell, share, or transmit any personal or personally
+    identifiable information.</strong> There is no account, no analytics, no tracking pixel,
+    and no third-party analytics or advertising service. We do not access your browsing
+    history, location, contacts, credentials, or your activity on any non-AliExpress
+    website.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="9" r="1"/><circle cx="15.5" cy="13.5" r="1"/><circle cx="9.5" cy="16" r="1"/></svg></span>Cookies</h2>
+    <p>The extension <strong>does not create, set, or modify any cookie.</strong> It does read
+    two of AliExpress's own non-private cookies (<code>aeu_cid</code> and
+    <code>xman_us_f</code>) on AliExpress pages, for a single purpose: these cookies record
+    which affiliate referral AliExpress currently has on file, and reading them is how the
+    extension can tell you that another installed extension has replaced that referral (see
+    <em>Affiliate links</em>). This read happens locally in your browser and the cookie values
+    are never transmitted anywhere. AliExpress's login and session cookies are marked
+    <code>httpOnly</code>, which means the extension is technically incapable of reading them
+    at all.</p>
   </section>
 
   <section class="card">
     <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" y1="16" x2="6.01" y2="16"/><line x1="10" y1="16" x2="10.01" y2="16"/></svg></span>Local storage</h2>
     <p>The extension may use your browser's local storage
-    (<code>chrome.storage.local</code>) to remember your preferences and to cache
-    product-analysis results on your own device so pages load faster. This information
-    stays on your device and is never uploaded anywhere. You can clear it at any time by
-    removing the extension.</p>
+    (<code>chrome.storage.local</code>) to remember your preferences from the extension
+    popup. This information stays on your device and is never uploaded anywhere. You can
+    clear it at any time by removing the extension.</p>
   </section>
 
   <section class="card">
@@ -246,9 +279,15 @@
     <p>Some AliExpress product links shown or enhanced by the extension may include our
     affiliate tracking code. If you make a purchase through such a link, we may earn a
     small commission from AliExpress <strong>at no extra cost to you</strong> — prices
-    never change. This tracking is handled entirely by AliExpress's own affiliate system:
-    no personal information about you is sent to us or to any third party, and we cannot
-    see who you are, what you bought, or any of your account details.</p>
+    never change.</p>
+    <p>Other installed extensions can replace that code with their own. When the extension
+    detects that this has happened, it shows a notice offering to re-open the page through
+    our link. That re-open <strong>only ever happens when you click that button</strong> —
+    the extension never re-directs, re-loads, or re-writes your page automatically to
+    reassert its own affiliate code.</p>
+    <p>All affiliate tracking is handled entirely by AliExpress's own affiliate system: no
+    personal information about you is sent to us or to any third party, and we cannot see
+    who you are, what you bought, or any of your account details.</p>
   </section>
 
   <section class="card">
