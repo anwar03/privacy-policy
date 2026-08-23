@@ -188,7 +188,7 @@
 <header class="hero">
   <span class="badge">Privacy Policy</span>
   <h1>AliScore Online Shopping Assistant For AliExpress</h1>
-  <p class="updated">Last updated: 12 August 2026</p>
+  <p class="updated">Last updated: 23 August 2026</p>
 </header>
 
 <main class="wrap">
@@ -218,8 +218,9 @@
           <em>Requests through our servers</em> below for how that request travels.</li>
       <li>Displays that score, a seller-trust indicator, and a "safe to buy" summary on
           the page.</li>
-      <li>May add our affiliate code to AliExpress product links, and may show a notice if
-          another installed extension has replaced that code. See <em>Affiliate links</em>
+      <li>May add our affiliate code to AliExpress product links and &mdash; <strong>only if
+          you have explicitly opted in</strong> &mdash; may re-open an AliExpress product
+          page through that link, which reloads the page once. See <em>Affiliate links</em>
           below.</li>
     </ol>
     <p>The extension runs <strong>only</strong> on AliExpress domains
@@ -270,8 +271,11 @@
     <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" y1="16" x2="6.01" y2="16"/><line x1="10" y1="16" x2="10.01" y2="16"/></svg></span>Local storage</h2>
     <p>The extension may use your browser's local storage
     (<code>chrome.storage.local</code>) to remember your preferences from the extension
-    popup. This information stays on your device and is never uploaded anywhere. You can
-    clear it at any time by removing the extension.</p>
+    popup, including your answer to the affiliate-link dialog described below. It also uses
+    your browser's per-tab <code>sessionStorage</code> to count how many times it has
+    re-opened a given product page, so it can stop after three. All of this stays on your
+    device and is never uploaded anywhere. You can clear it at any time by removing the
+    extension.</p>
   </section>
 
   <section class="card">
@@ -280,11 +284,28 @@
     affiliate tracking code. If you make a purchase through such a link, we may earn a
     small commission from AliExpress <strong>at no extra cost to you</strong> — prices
     never change.</p>
-    <p>Other installed extensions can replace that code with their own. When the extension
-    detects that this has happened, it shows a notice offering to re-open the page through
-    our link. That re-open <strong>only ever happens when you click that button</strong> —
-    the extension never re-directs, re-loads, or re-writes your page automatically to
-    reassert its own affiliate code.</p>
+    <p>Other installed extensions can replace that code with their own. The extension
+    handles this in two ways, and the difference matters:</p>
+    <p><strong>1. Only after you opt in.</strong> The first time you open an AliExpress
+    product page, the extension asks &mdash; in a dialog on the page, with two buttons
+    &mdash; whether you will allow it to open product pages through our affiliate link.
+    <strong>Nothing happens unless you press &ldquo;Allow&rdquo;.</strong> If you press
+    &ldquo;No thanks&rdquo;, or simply ignore the dialog, the extension never re-directs or
+    reloads any page.</p>
+    <p><strong>2. What happens if you do opt in.</strong> On an AliExpress
+    <strong>product page</strong> where our affiliate code is not the one currently applied,
+    the extension will, about one second after the page loads, re-open that same product
+    page through our affiliate link. <strong>This reloads the product page once.</strong>
+    You stay on the same product; nothing about the product, the price, or your cart
+    changes. It will not do this more than three times for the same product, and it does not
+    do it at all on your <strong>cart, checkout, or order pages</strong> &mdash; those are
+    never redirected.</p>
+    <p><strong>You can switch this off at any time</strong> from the extension popup
+    (&ldquo;Support us with affiliate links&rdquo;), and switching it off stops it
+    immediately.</p>
+    <p>We are describing this plainly because it is a visible behaviour: if a product page
+    reloads itself shortly after opening, that is this feature, and it is the only thing in
+    the extension that does it.</p>
     <p>All affiliate tracking is handled entirely by AliExpress's own affiliate system: no
     personal information about you is sent to us or to any third party, and we cannot see
     who you are, what you bought, or any of your account details.</p>
