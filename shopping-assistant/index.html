@@ -273,7 +273,7 @@
     (<code>chrome.storage.local</code>) to remember your preferences from the extension
     popup, including your answer to the affiliate-link dialog described below. It also uses
     your browser's per-tab <code>sessionStorage</code> to count how many times it has
-    re-opened a given product page, so it can stop after three. All of this stays on your
+    re-opened a given product page, so it can stop after one. All of this stays on your
     device and is never uploaded anywhere. You can clear it at any time by removing the
     extension.</p>
   </section>
@@ -294,12 +294,12 @@
     reloads any page.</p>
     <p><strong>2. What happens if you do opt in.</strong> On an AliExpress
     <strong>product page</strong> where our affiliate code is not the one currently applied,
-    the extension will, about one second after the page loads, re-open that same product
-    page through our affiliate link. <strong>This reloads the product page once.</strong>
-    You stay on the same product; nothing about the product, the price, or your cart
-    changes. It will not do this more than three times for the same product, and it does not
-    do it at all on your <strong>cart, checkout, or order pages</strong> &mdash; those are
-    never redirected.</p>
+    the extension will, about a second and a half after the page starts loading, re-open
+    that same product page through our affiliate link. <strong>This reloads the product page
+    once.</strong> You stay on the same product; nothing about the product, the price, or
+    your cart changes. It will not do this more than <strong>once</strong> for the same
+    product, and it does not do it at all on your <strong>cart, checkout, or order
+    pages</strong> &mdash; those are never redirected.</p>
     <p><strong>You can switch this off at any time</strong> from the extension popup
     (&ldquo;Support us with affiliate links&rdquo;), and switching it off stops it
     immediately.</p>
