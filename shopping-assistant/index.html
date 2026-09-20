@@ -188,7 +188,7 @@
 <header class="hero">
   <span class="badge">Privacy Policy</span>
   <h1>AliScore: Online Shopping Assistant for AliExpress</h1>
-  <p class="updated">Last updated: 9 September 2026</p>
+  <p class="updated">Last updated: 20 September 2026</p>
 </header>
 
 <main class="wrap">
@@ -196,12 +196,14 @@
   <section class="summary">
     <p>AliScore: Online Shopping Assistant for AliExpress ("the extension") helps you evaluate
     products while shopping on AliExpress. In short: <strong>the extension does not collect
-    an account, a profile, or any personally identifying information about you, and it
-    contains no analytics or tracking.</strong> The sections below describe exactly what it
-    reads and what leaves your browser.</p>
+    an account, a name, an email address, or any personally identifying information about
+    you.</strong> From version 1.0.9 it sends <strong>anonymous purchase statistics</strong> to
+    our own server, described in full under <em>Purchase statistics</em> below, and you can
+    switch that off in the extension popup at any time. The sections below describe exactly what
+    it reads and what leaves your browser.</p>
     <div class="chips">
       <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No personal data collected</span>
-      <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No tracking or analytics</span>
+      <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No third-party analytics</span>
       <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Runs only on AliExpress</span>
     </div>
   </section>
@@ -219,10 +221,11 @@
           score badge. See <em>Where the extension sends requests</em> below.</li>
       <li>Displays that score, a seller-trust indicator, and a "safe to buy" summary on
           the page.</li>
-      <li>May add our affiliate code to AliExpress product links and &mdash; <strong>only if
-          you have explicitly opted in</strong> &mdash; may re-open an AliExpress product
-          page through that link, which reloads the page once. See <em>Affiliate links</em>
-          below.</li>
+      <li>May add our affiliate code to AliExpress product links on the pages you browse.
+          It never redirects or reloads a page &mdash; a link only opens if you click it.
+          See <em>Affiliate links</em> below.</li>
+      <li>Unless you switch it off, sends anonymous purchase statistics to our server. See
+          <em>Purchase statistics</em> below.</li>
     </ol>
     <p>The extension runs <strong>only</strong> on AliExpress domains
     (<code>aliexpress.com</code> and its regional variants, <code>aliexpress.ru</code>, and
@@ -235,22 +238,70 @@
     of the product you asked about to AliExpress's own public review endpoint
     (<code>feedback.aliexpress.com</code>). That request goes <strong>directly from your
     browser to AliExpress</strong>.</p>
-    <p><strong>The extension does not send anything to any server we operate, and does not
-    contact any third party.</strong> AliExpress is the only destination. Earlier versions
-    forwarded some of these lookups through relay servers of ours; those relays were removed
-    and the extension no longer contacts them.</p>
     <p>The lookup happens only when you ask for it &mdash; when you hover over or click an
     AliScore badge, or when you open a product page &mdash; and the answer is cached on your
     device for up to 72 hours, so viewing the same product again usually sends no request at
     all.</p>
+    <p>The extension contacts exactly two destinations: AliExpress, for the lookups above, and
+    <strong>our own server at <code>shoppingassistant.xyz</code></strong>, only for the purchase
+    statistics described in the next section. It contacts <strong>no third party</strong> &mdash;
+    no analytics company, no advertising service, no data broker. (Earlier versions forwarded
+    some review lookups through relay servers of ours; those relays were removed and the
+    extension no longer contacts them.)</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>Purchase statistics</h2>
+    <p><strong>What it is for.</strong> We earn our income from AliExpress affiliate commissions.
+    AliExpress's own affiliate dashboard shows us clicks and commissions, but not whether people
+    who use the extension actually buy, or whether another extension's affiliate code took the
+    credit for a purchase. These statistics answer those two questions, as counts.</p>
+    <p><strong>What is sent</strong>, from your browser to <code>shoppingassistant.xyz</code>:</p>
+    <ul>
+      <li>a <strong>random install ID</strong> &mdash; a random number the extension generates
+          once; it is not derived from you, your device, or your AliExpress account;</li>
+      <li>the extension version and browser family (for example "Chrome");</li>
+      <li>once per day that you open AliExpress, a note that the extension was used that day;</li>
+      <li>when you view a <strong>product page</strong>, or have products in your
+          <strong>cart</strong>, while our affiliate code is <strong>not</strong> the one
+          AliExpress currently has on file: the <strong>AliExpress product ID</strong> of each
+          such product, the page type (product, cart or checkout), and whose affiliate code is on
+          file instead &mdash; the other affiliate's public code, or "none";</li>
+      <li>when you reach <strong>checkout</strong>: the product IDs at checkout and which
+          affiliate code is on file;</li>
+      <li>when the extension detects that you <strong>placed an order</strong>: the product IDs,
+          which affiliate code was on file when you pressed the order button, and a
+          <strong>one-way fingerprint</strong> of the order (a SHA-256 hash of the install ID
+          combined with the order number). The fingerprint lets us avoid counting one order
+          twice; <strong>the order number itself never leaves your browser.</strong></li>
+    </ul>
+    <p><strong>What is never sent:</strong> your name, email, address, phone, AliExpress account
+    or login, payment details, prices or order totals, order numbers, cookies, search terms, the
+    addresses (URLs) of pages you visit, or anything about websites other than AliExpress. Our
+    server does not store your IP address.</p>
+    <p><strong>How it is used and kept.</strong> Only to count, per day, per product and per
+    affiliate code: how many installs used AliExpress, how many reached checkout, how many orders
+    followed, and whose affiliate code received them. It is not sold, shared, used for
+    advertising, or combined with any other data. Product-page, cart and checkout-page product
+    records are deleted after 180 days, and daily-use records after 400 days. Order records are
+    kept until you switch the statistics off, because they are the counts this feature exists to
+    produce.</p>
+    <p><strong>Turning it off.</strong> Switch off <strong>&ldquo;Share anonymous purchase
+    stats&rdquo;</strong> in the extension popup. Collection stops immediately, anything not yet
+    sent is deleted from your browser, and the extension asks our server to <strong>delete every
+    record for your install ID</strong> (if you are offline, it asks again the next time the
+    browser starts). Removing the extension also stops collection. Because the install ID is
+    random and lives only in your browser, removing the extension first means neither you nor we
+    can tie the records already sent to you; switch the statistics off before uninstalling if you
+    want them deleted.</p>
   </section>
 
   <section class="card">
     <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Data we collect</h2>
-    <p><strong>We do not collect, sell, share, or transmit any personal or personally
-    identifiable information.</strong> There is no account, no analytics, no tracking pixel,
-    and no third-party analytics or advertising service. We do not access your browsing
-    history, location, contacts, credentials, or your activity on any non-AliExpress
+    <p>Apart from the anonymous purchase statistics described above, <strong>we do not collect,
+    sell, share, or transmit any personal or personally identifiable information.</strong> There
+    is no account, no tracking pixel, and no third-party analytics or advertising service. We do
+    not access your location, contacts, credentials, or your activity on any non-AliExpress
     website.</p>
   </section>
 
@@ -261,8 +312,9 @@
     <code>xman_us_f</code>) on AliExpress pages, for a single purpose: these cookies record
     which affiliate referral AliExpress currently has on file, and reading them is how the
     extension can tell you that another installed extension has replaced that referral (see
-    <em>Affiliate links</em>). This read happens locally in your browser and the cookie values
-    are never transmitted anywhere. AliExpress's login and session cookies are marked
+    <em>Affiliate links</em>), and which affiliate code is on file for the purchase statistics.
+    The cookie values themselves are never transmitted; only the public affiliate code read from
+    them is, as described under <em>Purchase statistics</em>. AliExpress's login and session cookies are marked
     <code>httpOnly</code>, which means the extension is technically incapable of reading them
     at all.</p>
   </section>
@@ -271,7 +323,7 @@
     <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" y1="16" x2="6.01" y2="16"/><line x1="10" y1="16" x2="10.01" y2="16"/></svg></span>Local storage</h2>
     <p>The extension may use your browser's local storage
     (<code>chrome.storage.local</code>) to remember your preferences from the extension
-    popup, including your answer to the affiliate-link dialog described below.</p>
+    popup, including whether affiliate links are switched on.</p>
     <p>It also keeps a <strong>local cache of the public review statistics</strong> it has
     already looked up, so that checking the same product again does not send another request.
     Each cached entry holds only the AliExpress product identifier and the public review
@@ -282,10 +334,15 @@
     how often you looked at anything, no URLs and no browsing history. Entries are discarded
     automatically after 72 hours (6 hours for a product that had no review data), and the
     number of entries is capped, so the cache cannot grow without bound.</p>
-    <p>It also uses your browser's per-tab <code>sessionStorage</code> to count how many
-    times it has re-opened a given product page, so it can stop after one. All of this stays
-    on your device and is never uploaded anywhere. You can clear it at any time by removing
-    the extension.</p>
+    <p>It also uses your browser's per-tab <code>sessionStorage</code> to remember which
+    products it has already counted in that tab, so a reload does not count them again. All
+    of this stays on your device.</p>
+    <p>For the purchase statistics, local storage also holds the random install ID, the
+    statistics waiting to be sent (at most 500, removed once sent, never older than 29 days), and
+    the most recent checkout &mdash; its product IDs and which affiliate code was on file &mdash;
+    for up to three hours, so the extension can tell whether an order followed it. Nothing else in
+    local storage is ever uploaded. You can clear all of it at any time by removing the
+    extension.</p>
   </section>
 
   <section class="card">
@@ -294,39 +351,38 @@
     affiliate tracking code. If you make a purchase through such a link, we may earn a
     small commission from AliExpress <strong>at no extra cost to you</strong> — prices
     never change.</p>
-    <p>Other installed extensions can replace that code with their own. The extension
-    handles this in two ways, and the difference matters:</p>
-    <p><strong>1. Only after you opt in.</strong> The first time you open an AliExpress
-    product page, the extension asks &mdash; in a dialog on the page, with two buttons
-    &mdash; whether you will allow it to open product pages through our affiliate link.
-    <strong>Nothing happens unless you press &ldquo;Allow&rdquo;.</strong> If you press
-    &ldquo;No thanks&rdquo;, or simply ignore the dialog, the extension never re-directs or
-    reloads any page.</p>
-    <p><strong>2. What happens if you do opt in.</strong> On an AliExpress
-    <strong>product page</strong> where our affiliate code is not the one currently applied,
-    the extension will, about a second and a half after the page starts loading, re-open
-    that same product page through our affiliate link. <strong>This reloads the product page
-    once.</strong> You stay on the same product; nothing about the product, the price, or
-    your cart changes. It will not do this more than <strong>once</strong> for the same
-    product, and it does not do it at all on your <strong>cart, checkout, or order
-    pages</strong> &mdash; those are never redirected.</p>
-    <p><strong>You can switch this off at any time</strong> from the extension popup
-    (&ldquo;Support us with affiliate links&rdquo;), and switching it off stops it
+    <p><strong>The extension never redirects or reloads a page.</strong> It only changes
+    where a link points, before you click it. Nothing on AliExpress opens, moves, or reloads
+    unless you click it yourself. Earlier versions of this extension did re-open product
+    pages automatically; that behaviour was removed and no part of the extension does it any
+    more.</p>
+    <p>Concretely, there are two things it does, and both need a click from you:</p>
+    <p><strong>1. Product links on listing pages.</strong> On AliExpress home, bundle, and
+    wholesale listing pages, the extension sets our affiliate code on the product links in
+    the page. If another extension has already put its own affiliate code on a link, ours
+    replaces it. The link still points at the same product on the same AliExpress site; only
+    the tracking code differs, and the link opens only if you click it.</p>
+    <p><strong>2. A &ldquo;secure my link&rdquo; button.</strong> When another extension's
+    affiliate code is the one currently on file, the extension may show a small notice on the
+    product page or the cart page offering to re-open your <strong>cart</strong> through our
+    link. It is a button. It does nothing until you press it, and if you never press it
+    nothing happens.</p>
+    <p><strong>You can switch both off at any time</strong> from the extension popup
+    (&ldquo;Support us with affiliate links&rdquo;), and switching it off stops them
     immediately.</p>
-    <p>We are describing this plainly because it is a visible behaviour: if a product page
-    reloads itself shortly after opening, that is this feature, and it is the only thing in
-    the extension that does it.</p>
-    <p>All affiliate tracking is handled entirely by AliExpress's own affiliate system: no
-    personal information about you is sent to us or to any third party, and we cannot see
-    who you are, what you bought, or any of your account details.</p>
+    <p>All affiliate tracking itself is handled by AliExpress's own affiliate system. AliExpress
+    does not tell us who you are or any of your account details. The only purchase information we
+    receive is the anonymous product-level statistics described under <em>Purchase
+    statistics</em>, which you can switch off.</p>
   </section>
 
   <section class="card">
     <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>This website</h2>
     <p>This section is about <strong>shoppingassistant.xyz, the extension's website, and nothing
     else.</strong> The extension is described in every section above, and none of what follows
-    applies to it: the extension loads nothing from Google, contacts no analytics service, and
-    still sends nothing to any server we operate.</p>
+    applies to it: the extension loads nothing from Google and contacts no analytics service. (The
+    purchase statistics it sends to <code>shoppingassistant.xyz/api/</code> are the ones described
+    above; they are not written to the website log below, and are not shared with Google.)</p>
     <p><strong>Our server log.</strong> Our web server writes one line for each page requested:
     the page, the time, the referring page if your browser sent one, your browser's user-agent
     string, and your IP address with its last part removed <em>before</em> it is written (the
