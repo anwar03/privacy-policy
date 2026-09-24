@@ -188,7 +188,7 @@
 <header class="hero">
   <span class="badge">Privacy Policy</span>
   <h1>AliScore: Online Shopping Assistant for AliExpress</h1>
-  <p class="updated">Last updated: 20 September 2026</p>
+  <p class="updated">Last updated: 24 September 2026</p>
 </header>
 
 <main class="wrap">
@@ -198,8 +198,10 @@
     products while shopping on AliExpress. In short: <strong>the extension does not collect
     an account, a name, an email address, or any personally identifying information about
     you.</strong> From version 1.0.8 it sends <strong>anonymous purchase statistics</strong> to
-    our own server, described in full under <em>Purchase statistics</em> below, and you can
-    switch that off in the extension popup at any time. The sections below describe exactly what
+    our own server, described in full under <em>Purchase statistics</em> below. From version
+    1.0.9 it also sends <strong>anonymous error reports</strong> when it cannot read a figure on
+    an AliExpress page, described under <em>Error reports</em>. You can switch each of them off
+    separately in the extension popup at any time. The sections below describe exactly what
     it reads and what leaves your browser.</p>
     <div class="chips">
       <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No personal data collected</span>
@@ -226,6 +228,8 @@
           See <em>Affiliate links</em> below.</li>
       <li>Unless you switch it off, sends anonymous purchase statistics to our server. See
           <em>Purchase statistics</em> below.</li>
+      <li>Unless you switch it off, sends anonymous error reports to our server when it could
+          not read a figure on an AliExpress page. See <em>Error reports</em> below.</li>
     </ol>
     <p>The extension runs <strong>only</strong> on AliExpress domains
     (<code>aliexpress.com</code> and its regional variants, <code>aliexpress.ru</code>, and
@@ -244,7 +248,7 @@
     all.</p>
     <p>The extension contacts exactly two destinations: AliExpress, for the lookups above, and
     <strong>our own server at <code>shoppingassistant.xyz</code></strong>, only for the purchase
-    statistics described in the next section. It contacts <strong>no third party</strong> &mdash;
+    statistics and the error reports described in the next two sections. It contacts <strong>no third party</strong> &mdash;
     no analytics company, no advertising service, no data broker. (Earlier versions forwarded
     some review lookups through relay servers of ours; those relays were removed and the
     extension no longer contacts them.)</p>
@@ -263,10 +267,9 @@
       <li>the extension version and browser family (for example "Chrome");</li>
       <li>once per day that you open AliExpress, a note that the extension was used that day;</li>
       <li>when you view a <strong>product page</strong>, or have products in your
-          <strong>cart</strong>, while our affiliate code is <strong>not</strong> the one
-          AliExpress currently has on file: the <strong>AliExpress product ID</strong> of each
-          such product, the page type (product, cart or checkout), and whose affiliate code is on
-          file instead &mdash; the other affiliate's public code, or "none";</li>
+          <strong>cart</strong>: the <strong>AliExpress product ID</strong> of each such product,
+          the page type (product, cart or checkout), and whose affiliate code AliExpress currently
+          has on file &mdash; ours, another affiliate's public code, or "none";</li>
       <li>when you reach <strong>checkout</strong>: the product IDs at checkout and which
           affiliate code is on file;</li>
       <li>when the extension detects that you <strong>placed an order</strong>: the product IDs,
@@ -279,12 +282,19 @@
     or login, payment details, prices or order totals, order numbers, cookies, search terms, the
     addresses (URLs) of pages you visit, or anything about websites other than AliExpress. Our
     server does not store your IP address.</p>
+    <p><strong>Your country.</strong> The extension does not send your location. When the
+    statistics arrive, our server works out <strong>which country</strong> they came from, using
+    your IP address and the free <a href="https://db-ip.com">DB-IP</a> country database, and
+    stores only that country (for example "Bangladesh") next to the random install ID. The IP
+    address itself is used only for that lookup and is then discarded &mdash; it is not stored or
+    logged. The country is the most recent one the statistics came from, and it is used only to
+    count installs and orders per country.</p>
     <p><strong>How it is used and kept.</strong> Only to count, per day, per product and per
     affiliate code: how many installs used AliExpress, how many reached checkout, how many orders
     followed, and whose affiliate code received them. It is not sold, shared, used for
     advertising, or combined with any other data. Product-page, cart and checkout-page product
-    records are deleted after 180 days, and daily-use records after 400 days. Order records are
-    kept until you switch the statistics off, because they are the counts this feature exists to
+    records are deleted after 180 days, and daily-use records after 400 days. Order records, and
+    the install's country, are kept until you switch the statistics off, because they are the counts this feature exists to
     produce.</p>
     <p><strong>Turning it off.</strong> Switch off <strong>&ldquo;Share anonymous purchase
     stats&rdquo;</strong> in the extension popup. Collection stops immediately, anything not yet
@@ -297,11 +307,49 @@
   </section>
 
   <section class="card">
+    <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>Error reports</h2>
+    <p><strong>What it is for.</strong> AliExpress shows its pages in the shopper's language, and
+    the extension reads figures such as the sold count or the store's positive-feedback rate from
+    that page text. When AliExpress changes a page, or shows it in a language the extension reads
+    badly, those figures silently go missing or come out wrong. Error reports tell us which figure
+    failed, on which language of the site, so we can fix it.</p>
+    <p><strong>What is sent</strong>, from your browser to <code>shoppingassistant.xyz</code>, at
+    most once every 30 minutes:</p>
+    <ul>
+      <li>a <strong>random reporter ID</strong> &mdash; generated once by the extension, and
+          <strong>separate from the purchase statistics' install ID</strong>; the two are never
+          sent together, so our server cannot link an error report to purchase statistics;</li>
+      <li>the extension version, browser family and the browser's language (for example "es");</li>
+      <li>per day: the AliExpress site (for example <code>es.aliexpress.com</code>), the language
+          the page declared, the page type (product, listing or search), which figure it was (for
+          example "sold count"), how many times reading it worked and how many times it failed that
+          day;</li>
+      <li>for a figure that failed, <strong>up to 80 characters of the page text</strong> the
+          extension could not read (for example "1,5 tys. sprzedanych"). This is public text from
+          the AliExpress page &mdash; a price, a sold count, a rating label. From a product listing
+          only the lines holding figures are taken, never the product's title.</li>
+    </ul>
+    <p><strong>What is never sent:</strong> the address (URL) of the page, product IDs, your
+    AliExpress account or login, cookies, search terms, anything you typed, or anything about
+    websites other than AliExpress.</p>
+    <p><strong>How it is used and kept.</strong> Only to see which figures fail on which site and
+    language, and to fix the extension. It is not sold, shared, used for advertising, or combined
+    with the purchase statistics or any other data. Records are deleted 90 days after the day they
+    describe.</p>
+    <p><strong>Turning it off.</strong> Switch off <strong>&ldquo;Send anonymous error
+    reports&rdquo;</strong> in the extension popup. Reporting stops immediately, the counts not yet
+    sent are deleted from your browser, and the extension asks our server to <strong>delete every
+    record for your reporter ID</strong> (if you are offline, it asks again the next time the
+    browser starts). This switch is independent of the purchase statistics switch.</p>
+  </section>
+
+  <section class="card">
     <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Data we collect</h2>
-    <p>Apart from the anonymous purchase statistics described above, <strong>we do not collect,
+    <p>Apart from the anonymous purchase statistics and error reports described above, <strong>we do not collect,
     sell, share, or transmit any personal or personally identifiable information.</strong> There
     is no account, no tracking pixel, and no third-party analytics or advertising service. We do
-    not access your location, contacts, credentials, or your activity on any non-AliExpress
+    not access your location (beyond the country our server derives, as described under
+    <em>Purchase statistics</em>), contacts, credentials, or your activity on any non-AliExpress
     website.</p>
   </section>
 
@@ -340,7 +388,9 @@
     <p>For the purchase statistics, local storage also holds the random install ID, the
     statistics waiting to be sent (at most 500, removed once sent, never older than 29 days), and
     the most recent checkout &mdash; its product IDs and which affiliate code was on file &mdash;
-    for up to three hours, so the extension can tell whether an order followed it. Nothing else in
+    for up to three hours, so the extension can tell whether an order followed it. For error
+    reports, it holds the random reporter ID and the per-day counts described under <em>Error
+    reports</em>, for at most 13 days. Nothing else in
     local storage is ever uploaded. You can clear all of it at any time by removing the
     extension.</p>
   </section>
