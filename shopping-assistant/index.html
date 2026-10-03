@@ -275,9 +275,14 @@
           affiliate code is on file;</li>
       <li>when the extension detects that you <strong>placed an order</strong>: the product IDs,
           which affiliate code was on file when you pressed the order button, and a
-          <strong>one-way fingerprint</strong> of the order (a SHA-256 hash of the install ID
-          combined with the order number). The fingerprint lets us avoid counting one order
-          twice; <strong>the order number itself never leaves your browser.</strong></li>
+          <strong>one-way fingerprint</strong> of each order number on the confirmation page (a
+          SHA-256 hash of the install ID combined with the order number; an order split across
+          several stores has one per store). The fingerprint lets us avoid counting one order
+          twice, and lets us check orders that AliExpress's affiliate report already lists as
+          earning our commission against the orders the extension saw: we hash the order number
+          from that report the same way and compare. A fingerprint does not contain the order
+          number, and we only ever compare it with order numbers AliExpress has already reported
+          to us; <strong>the order number itself never leaves your browser.</strong></li>
       <li>when that checkout or order had <strong>no affiliate code on file at all</strong>, a few
           facts that help us understand why: whether the popup's affiliate switch is on, how many
           minutes ago the last automatic product-page pass happened and whose affiliate code
