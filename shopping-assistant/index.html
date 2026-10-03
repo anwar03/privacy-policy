@@ -188,7 +188,7 @@
 <header class="hero">
   <span class="badge">Privacy Policy</span>
   <h1>AliScore: Online Shopping Assistant for AliExpress</h1>
-  <p class="updated">Last updated: 29 September 2026</p>
+  <p class="updated">Last updated: 3 October 2026</p>
 </header>
 
 <main class="wrap">
@@ -278,6 +278,17 @@
           <strong>one-way fingerprint</strong> of the order (a SHA-256 hash of the install ID
           combined with the order number). The fingerprint lets us avoid counting one order
           twice; <strong>the order number itself never leaves your browser.</strong></li>
+      <li>when that checkout or order had <strong>no affiliate code on file at all</strong>, a few
+          facts that help us understand why: whether the popup's affiliate switch is on, how many
+          minutes ago the last automatic product-page pass happened and whose affiliate code
+          (ours, another, or none) was on file when it finished (or that it never finished), and
+          how many minutes ago you last viewed a product page and whose code was on file then.
+          Minutes are rounded and capped at 30 days; no product, page address or affiliate code
+          itself is part of it;</li>
+      <li>for the <strong>cart notice</strong> (the &ldquo;secure my link&rdquo; and &ldquo;support
+          AliScore&rdquo; buttons): that it was shown, pressed, or hidden with &ldquo;Not
+          now&rdquo;, which of the two it was, and &mdash; after you press it and your cart opens
+          again &mdash; whose affiliate code is now on file.</li>
     </ul>
     <p><strong>What is never sent:</strong> your name, email, address, phone, AliExpress account
     or login, payment details, prices or order totals, order numbers, cookies, search terms, the
@@ -292,9 +303,10 @@
     count installs and orders per country.</p>
     <p><strong>How it is used and kept.</strong> Only to count, per day, per product and per
     affiliate code: how many installs used AliExpress, how many reached checkout, how many orders
-    followed, and whose affiliate code received them. It is not sold, shared, used for
+    followed, and whose affiliate code received them &mdash; and, for orders with no affiliate
+    code, why, and how often the cart notice is pressed. It is not sold, shared, used for
     advertising, or combined with any other data. Product-page, cart and checkout-page product
-    records are deleted after 180 days, and daily-use records after 400 days. Order records, and
+    records, and the cart-notice records, are deleted after 180 days, and daily-use records after 400 days. Order records, and
     the install's country, are kept until you switch the statistics off, because they are the counts this feature exists to
     produce.</p>
     <p><strong>Turning it off.</strong> Switch off <strong>&ldquo;Share anonymous purchase
@@ -392,7 +404,13 @@
     <p>For the purchase statistics, local storage also holds the random install ID, the
     statistics waiting to be sent (at most 500, removed once sent, never older than 29 days), and
     the most recent checkout &mdash; its product IDs and which affiliate code was on file &mdash;
-    for up to three hours, so the extension can tell whether an order followed it. For error
+    for up to three hours, so the extension can tell whether an order followed it. It also keeps
+    the time and product ID of the last automatic product-page pass and whose affiliate code was
+    on file when it finished, and the time of your last product-page view and whose code was on
+    file then &mdash; only so a later order with no affiliate code can report the facts listed
+    under <em>Purchase statistics</em>; they are overwritten each time, never sent as a history.
+    When you press the cart notice, the tab's <code>sessionStorage</code> remembers that press for
+    two minutes, so the cart page it opens can tell that it came from the press. For error
     reports, it holds the random reporter ID and the per-day counts described under <em>Error
     reports</em>, for at most 13 days. Nothing else in
     local storage is ever uploaded. You can clear all of it at any time by removing the
