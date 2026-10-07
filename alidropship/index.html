@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — AliDropship Toolkit</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --brand: #6366f1;
+    --brand-2: #8b5cf6;
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --chip-bg: #eef2ff;
+    --chip-text: #4338ca;
+    --good: #10b981;
+    --good-bg: #ecfdf5;
+    --code-bg: #f3f4f6;
+    --shadow: 0 1px 3px rgba(17, 24, 39, .06), 0 10px 30px -12px rgba(17, 24, 39, .12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1020;
+      --card: #151b2e;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #252d44;
+      --chip-bg: #262c4a;
+      --chip-text: #c7d2fe;
+      --good: #34d399;
+      --good-bg: #0d2b22;
+      --code-bg: #1f2637;
+      --shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 10px 30px -12px rgba(0, 0, 0, .6);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+    color: #fff;
+    padding: 3.5rem 1.25rem 5.5rem;
+    text-align: center;
+  }
+  .hero .badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, .16);
+    border: 1px solid rgba(255, 255, 255, .3);
+    border-radius: 999px;
+    padding: .3rem 1rem;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-bottom: 1.1rem;
+  }
+  .hero h1 {
+    margin: 0 auto;
+    max-width: 620px;
+    font-size: clamp(1.5rem, 4.5vw, 2.2rem);
+    line-height: 1.25;
+    font-weight: 800;
+    letter-spacing: -.02em;
+  }
+  .hero .updated {
+    margin-top: .9rem;
+    font-size: .9rem;
+    opacity: .85;
+  }
+
+  /* Layout */
+  .wrap {
+    max-width: 760px;
+    margin: -3.2rem auto 0;
+    padding: 0 1.25rem 4rem;
+  }
+
+  /* Summary card */
+  .summary {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 1.25rem;
+    text-align: center;
+  }
+  .summary p {
+    margin: 0 0 1rem;
+    font-size: 1.05rem;
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    justify-content: center;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    background: var(--good-bg);
+    color: var(--good);
+    border-radius: 999px;
+    padding: .35rem .85rem;
+    font-size: .85rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .chip svg { flex: none; }
+
+  /* Sections */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.75rem;
+    margin-top: 1.25rem;
+  }
+  .card h2 {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    margin: 0 0 .75rem;
+    font-size: 1.15rem;
+    letter-spacing: -.01em;
+  }
+  .card h2 .icon {
+    flex: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--chip-bg);
+    color: var(--chip-text);
+  }
+  .card p { margin: .6rem 0; }
+  .card ol { margin: .6rem 0; padding-left: 1.3rem; }
+  .card li { margin: .35rem 0; }
+
+  code {
+    background: var(--code-bg);
+    padding: .12em .4em;
+    border-radius: 6px;
+    font-size: .88em;
+  }
+  a { color: var(--brand); font-weight: 600; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  @media (prefers-color-scheme: dark) { a { color: #a5b4fc; } }
+
+  .contact {
+    text-align: center;
+  }
+  .contact .mail {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: .4rem;
+    background: var(--chip-bg);
+    color: var(--chip-text);
+    border-radius: 999px;
+    padding: .5rem 1.2rem;
+    font-weight: 600;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: .85rem;
+    padding: 0 1.25rem 2.5rem;
+  }
+
+  /* The toolkit keeps more kinds of data than AliScore, so "what is kept" is a table. */
+  .card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: .8rem 0;
+    font-size: .92rem;
+  }
+  .card th, .card td {
+    border: 1px solid var(--border);
+    padding: .5rem .65rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .card th { background: var(--chip-bg); color: var(--chip-text); font-weight: 600; }
+  .card ul { margin: .6rem 0; padding-left: 1.3rem; }
+  .card h3 { margin: 1.1rem 0 .3rem; font-size: 1rem; }
+  /* A table is wider than a phone: let it scroll on its own rather than the page. */
+  .scroll { overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="badge">Privacy Policy</span>
+  <h1>AliDropship Toolkit</h1>
+  <p class="updated">Last updated: 7 October 2026</p>
+</header>
+
+<main class="wrap">
+
+  <section class="summary">
+    <p>AliDropship Toolkit ("the extension") is a browser extension for people who sell
+    products they buy on AliExpress and Alibaba. <strong>Everything the extension saves —
+    your products, orders, invoices and settings — stays in your browser on your
+    computer.</strong> There is no account and no advertising. Two things are not local, and
+    this policy states both: product links you click are wrapped with our affiliate tag, and
+    anonymous usage counts are sent to our server after you agree. Neither carries your
+    orders, addresses, product titles or browsing history, and the counts can be switched off
+    and deleted at any time.</p>
+    <div class="chips">
+      <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No account, no sign-up</span>
+      <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No ads, no analytics networks</span>
+      <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Your orders stay on your device</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></span>What the extension reads and keeps</h2>
+    <p>All of the following is stored only in your browser's own storage for this extension
+    (IndexedDB and extension storage) on your device.</p>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>What</th><th>When</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Product facts from AliExpress and Alibaba product pages you open (title, prices, variants, images, shipping options, seller ratings)</td>
+          <td>When you open such a page; kept only if you save the product to your board</td>
+          <td>Profit calculator, shipping checker, seller score, product board, watchlist, store product files</td>
+        </tr>
+        <tr>
+          <td>Prices seen on product pages you open</td>
+          <td>Each time you open a product page</td>
+          <td>The watchlist's price history. Prices of products you did not save are deleted after 60 days</td>
+        </tr>
+        <tr>
+          <td>Your own AliExpress orders: order number, dates, items, amounts, order status, tracking number and tracking events, the destination <strong>country</strong></td>
+          <td>Only after you agree in the extension, when you open your order pages or start a sync</td>
+          <td>Order list, tracking, reminders before buyer protection ends, invoices and exports for your bookkeeping</td>
+        </tr>
+        <tr>
+          <td>Your settings, business details for invoices (name, address, tax number, logo)</td>
+          <td>When you type them</td>
+          <td>Shown on documents you create</td>
+        </tr>
+        <tr>
+          <td>A problem log: error codes, the feature and page type, counts and times</td>
+          <td>When something fails</td>
+          <td>So you can copy a report and send it to support yourself. It contains no page content, names, addresses or order numbers</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>What is never stored</h3>
+    <ul>
+      <li>The recipient's name, street address, phone number or e-mail address of an AliExpress
+      order, and any payment details. Only the destination country is kept.</li>
+      <li>Your AliExpress password or session.</li>
+      <li>Photos and videos you add to a dispute evidence pack (they stay in the open tab and
+      are gone when you close it).</li>
+    </ul>
+
+    <h3>Customer addresses for order filling</h3>
+    <p>When you use the address tool or the order queue, a customer's shipping address that you
+    paste or bring from your own store's order page is used to fill AliExpress's address form at
+    your click. A pasted address is held in memory only. An address in the order queue is stored
+    encrypted on your device and deleted 48 hours after you mark the order as ordered (orders
+    never started are deleted after the period you choose, 14 days by default).</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>What leaves your computer</h2>
+    <ul>
+      <li><strong>AliExpress and Alibaba.</strong> On their pages that you open, the extension
+      reads what the page shows. It asks those sites for more (shipping to other countries,
+      reviews) only when you use a tool. The seller's ratings are requested when a product page
+      opens, as the page's own "Sold by" box does. When you start a run (order details, "Check
+      now" on the watchlist), the extension opens your own pages one by one in a tab, as you
+      would.</li>
+      <li><strong>Exchange rates.</strong> A table of currency rates is downloaded from public
+      services (Frankfurter; the currency-api project through jsDelivr or Cloudflare Pages)
+      without cookies. The request does not say which product or currency you look at.</li>
+      <li><strong>Links you click.</strong> Tracking pages, AliExpress pages, Google Lens (only
+      when you press its button; Google then receives the link of that product photo).</li>
+      <li><strong>Affiliate links.</strong> When you click a product link on AliExpress, the
+      extension sends you to that same product through our AliExpress affiliate link. This is
+      how the extension is paid for. <strong>The product, the seller and the price you pay are
+      unchanged</strong>; if AliExpress pays a commission on your purchase, it comes out of
+      AliExpress's margin, not out of your price. The extension asks <code>alihelp.xyz</code>
+      for its own affiliate link settings; that request carries nothing about you or the
+      product.</li>
+      <li><strong>Anonymous usage counts.</strong> After you agree in the extension, it sends
+      counts to our own server at <code>shoppingassistant.xyz</code>: that this install is still
+      active (once a day), that an AliExpress product or checkout page was opened and whether it
+      carried our affiliate tag, and that an order was placed. An order is identified only by a
+      one-way hash of its number mixed with your random install id — we cannot turn it back into
+      an AliExpress order number. There is <strong>no account</strong>: the only identifier is a
+      random id that belongs to this installation. <strong>No order numbers, addresses, names,
+      product titles, prices, page addresses or browsing history are sent.</strong> You can
+      switch this off in Settings → Privacy, which also asks the server to delete what was
+      already sent for this installation.</li>
+      <li><strong>Nothing else.</strong> No advertising, no advertising or analytics networks,
+      no selling or sharing of data with anyone.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>Your controls</h2>
+    <ul>
+      <li>Settings → Privacy shows how much is stored and deletes it by kind (orders, board,
+      queue, invoices, calculator data, caches, problem log, settings) or all at once.</li>
+      <li>Settings → Privacy also has the switch for the anonymous usage counts. Switching it off
+      stops them, throws away anything not yet sent, and asks the server to delete this
+      installation's rows. "Delete everything" does the same.</li>
+      <li>The extension sends nothing at all until you have agreed to the notice inside it. If
+      what the extension handles changes, the version of that notice is raised and you are shown
+      what changed before anything new is sent.</li>
+      <li>Backup and restore are files you create and keep yourself.</li>
+      <li>Removing the extension from Chrome deletes everything it stored.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>Permissions</h2>
+    <p>The extension asks only for what its features need; each permission is explained in the
+    Chrome Web Store listing. Access to store platforms (Shopify, eBay, Etsy, TikTok Shop) is
+    optional and requested only when you switch that feature on.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Limited use</h2>
+    <p>The use of information received from the pages you visit is limited to providing the
+    features described above, on your device. It is not sold, not used for advertising, not used
+    to determine creditworthiness, and not read by any person other than you. The only
+    information that reaches us is the anonymous usage counts described above, used solely to see
+    that the extension works and is used; it is not combined with anything else and cannot be
+    traced back to you.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a3 3 0 1 0 6 0 3 3 0 0 0-6 0z"/><path d="M2 21v-1a6 6 0 0 1 6-6h8a6 6 0 0 1 6 6v1"/></svg></span>Children</h2>
+    <p>The extension is a business tool and is not directed to children.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 3v6h6"/></svg></span>Changes to this policy</h2>
+    <p>If the way the extension handles data changes, this page and the notice inside the
+    extension are updated, and the extension asks for your agreement again before saving order
+    data.</p>
+  </section>
+
+  <section class="card contact">
+    <h2 style="justify-content:center"><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>Contact</h2>
+    <p>Questions about this policy or about your data:</p>
+    <a class="mail" href="mailto:anwarazim03@gmail.com">anwarazim03@gmail.com</a>
+  </section>
+
+</main>
+
+<footer>AliDropship Toolkit · Privacy Policy<br>
+AliDropship Toolkit is independent and not affiliated with, endorsed by or sponsored by
+AliExpress, Alibaba Group or the store platforms named above.</footer>
+
+</body>
+</html>
