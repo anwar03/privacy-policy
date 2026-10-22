@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — AliExpress Amazon ebay dropshipping toolkit</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --brand: #059669;
+    --brand-2: #065f46;
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --chip-bg: #ecfdf5;
+    --chip-text: #047857;
+    --good: #10b981;
+    --good-bg: #ecfdf5;
+    --code-bg: #f3f4f6;
+    --shadow: 0 1px 3px rgba(17, 24, 39, .06), 0 10px 30px -12px rgba(17, 24, 39, .12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1020;
+      --card: #151b2e;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #252d44;
+      --chip-bg: #262c4a;
+      --chip-text: #c7d2fe;
+      --good: #34d399;
+      --good-bg: #0d2b22;
+      --code-bg: #1f2637;
+      --shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 10px 30px -12px rgba(0, 0, 0, .6);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+    color: #fff;
+    padding: 3.5rem 1.25rem 5.5rem;
+    text-align: center;
+  }
+  .hero .badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, .16);
+    border: 1px solid rgba(255, 255, 255, .3);
+    border-radius: 999px;
+    padding: .3rem 1rem;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-bottom: 1.1rem;
+  }
+  .hero h1 {
+    margin: 0 auto;
+    max-width: 620px;
+    font-size: clamp(1.5rem, 4.5vw, 2.2rem);
+    line-height: 1.25;
+    font-weight: 800;
+    letter-spacing: -.02em;
+  }
+  .hero .updated {
+    margin-top: .9rem;
+    font-size: .9rem;
+    opacity: .85;
+  }
+
+  /* Layout */
+  .wrap {
+    max-width: 760px;
+    margin: -3.2rem auto 0;
+    padding: 0 1.25rem 4rem;
+  }
+
+  /* Summary card */
+  .summary {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 1.25rem;
+    text-align: center;
+  }
+  .summary p {
+    margin: 0 0 1rem;
+    font-size: 1.05rem;
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    justify-content: center;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    background: var(--good-bg);
+    color: var(--good);
+    border-radius: 999px;
+    padding: .35rem .85rem;
+    font-size: .85rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .chip svg { flex: none; }
+
+  /* Sections */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.75rem;
+    margin-top: 1.25rem;
+  }
+  .card h2 {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    margin: 0 0 .75rem;
+    font-size: 1.15rem;
+    letter-spacing: -.01em;
+  }
+  .card h2 .icon {
+    flex: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--chip-bg);
+    color: var(--chip-text);
+  }
+  .card p { margin: .6rem 0; }
+  .card ol { margin: .6rem 0; padding-left: 1.3rem; }
+  .card li { margin: .35rem 0; }
+
+  code {
+    background: var(--code-bg);
+    padding: .12em .4em;
+    border-radius: 6px;
+    font-size: .88em;
+  }
+  a { color: var(--brand); font-weight: 600; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  @media (prefers-color-scheme: dark) { a { color: #a5b4fc; } }
+
+  .contact {
+    text-align: center;
+  }
+  .contact .mail {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: .4rem;
+    background: var(--chip-bg);
+    color: var(--chip-text);
+    border-radius: 999px;
+    padding: .5rem 1.2rem;
+    font-weight: 600;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: .85rem;
+    padding: 0 1.25rem 2.5rem;
+  }
+
+  /* The toolkit keeps more kinds of data than AliScore, so "what is kept" is a table. */
+  .card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: .8rem 0;
+    font-size: .92rem;
+  }
+  .card th, .card td {
+    border: 1px solid var(--border);
+    padding: .5rem .65rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .card th { background: var(--chip-bg); color: var(--chip-text); font-weight: 600; }
+  .card ul { margin: .6rem 0; padding-left: 1.3rem; }
+  .card h3 { margin: 1.1rem 0 .3rem; font-size: 1rem; }
+  /* A table is wider than a phone: let it scroll on its own rather than the page. */
+  .scroll { overflow-x: auto; }
+</style>
+</head>
+<body><header class="hero"><span class="badge">AAE Dropship</span><h1>Privacy Policy</h1><p>AliExpress Amazon ebay dropshipping toolkit</p><p class="updated">Effective date: October 22, 2026</p></header><main class="wrap"><section class="summary"><p><strong>Your research stays local.</strong> Settings and price history are stored in your browser. The extension sends feature-related requests to marketplaces and uses affiliate links, but does not send your research history to a developer-operated server.</p></section><section class="card"><h2>What the extension reads</h2><ul><li>Product, seller, price, shipping and review information displayed on supported AliExpress, Amazon, eBay and Alibaba pages you visit.</li><li>Related marketplace pages when needed for seller checks, review summaries, coupon discovery or a product check you request.</li><li>The active store tab’s research data, shared internally with the extension’s popup and native Chrome Side Panel.</li><li>If you enable the optional scam-shop warning and grant access, the current website’s address, visible text and links, analysed locally.</li></ul><p>The extension does not request access to your browser history database, passwords, payment-card details or cookies API. Product pages may include information associated with your signed-in marketplace session.</p></section>
+<section class="card"><h2>Data stored on your device</h2><p>Settings, interface preferences, toolbar position, trusted-site choices and local price history are stored in the browser’s local extension storage. Price history includes product identifiers, titles, image addresses, links and recorded daily minimum and maximum prices, with a limit of 90 daily records per product and 500 products.</p><p>Product analysis, review results and similar-product results are held in memory for display. AliExpress feedback responses may be cached in memory for up to 30 minutes. We do not upload this local history or these settings to a developer-operated server.</p></section>
+<section class="card"><h2>Requests to marketplaces and other services</h2><ul><li><strong>Marketplace information:</strong> the extension requests relevant product, seller, review or search pages from the marketplace. Requests may include the browser’s existing marketplace cookies, subject to browser rules.</li><li><strong>AliExpress review statistics:</strong> the product ID is sent to <code>feedback.aliexpress.com</code>. This request omits cookies.</li><li><strong>Find the same product:</strong> when you start a search, the editable search text, initially derived from the product title, is sent to AliExpress, Amazon and eBay. Results are not added to a developer database.</li><li><strong>Research shortcuts:</strong> clicking a shortcut opens the corresponding external service, such as YouTube, Reddit or Google Shopping, with the search query.</li><li><strong>Images:</strong> displaying product images may request them from the marketplace or its image host.</li></ul><p>These services receive ordinary network information such as your IP address and request metadata. Their own privacy policies apply to their handling of those requests. The extension does not include developer analytics, telemetry or a developer-operated data collection backend.</p></section>
+<section class="card"><h2>Affiliate links and attribution</h2><p>This extension uses affiliate links. If you follow one and make a qualifying purchase, the relevant affiliate programme may pay us a commission.</p><p>On supported AliExpress pages, the extension rewrites eligible product links, including newly loaded product cards, into AliExpress affiliate deep links. It also applies affiliate links to eligible Deals and Find the same product results. Existing affiliate tracking parameters, including another affiliate’s attribution, are removed before our attribution is applied. Product destinations and options such as SKU selections are preserved.</p><p>AliExpress links include our affiliate short key and <code>connected_by=aae_dropship</code>. These identify the extension’s affiliate source; they are not a unique user ID created by the extension. Amazon and eBay result links may also include affiliate IDs when configured in the build.</p><p>Link rewriting happens locally. Following a link sends you through the marketplace’s affiliate service, which may record the click, process purchase attribution and set its own cookies under its own policies. The extension itself does not use the cookies API or open hidden affiliate pages, and rewriting an anchor does not navigate the current page automatically.</p></section>
+<section class="card"><h2>Permissions and their purpose</h2><ul><li><code>storage</code>: save settings and local product-price history.</li><li><code>sidePanel</code> (Chrome): display research alongside the current webpage after you open the panel.</li><li><code>scripting</code>: register or remove the optional scam-warning script.</li><li><strong>Supported marketplace host access:</strong> read product information, fetch related marketplace pages and update eligible product links.</li><li><strong>Optional access to other websites:</strong> requested when you enable the scam-shop warning; you can decline or revoke this access.</li></ul><p>The extension does not request broad <code>tabs</code>, <code>history</code>, <code>cookies</code> or <code>webRequest</code> permissions. It uses the active tab’s identifier to communicate with its own content script.</p></section>
+<section class="card"><h2>Your choices and deletion</h2><p>You can change feature settings in the extension dashboard, switch off local price-history recording, and clear recorded price history from Dashboard → Price history. Turning recording off does not itself delete existing records. Optional site access can be revoked through browser settings. Disabling or uninstalling the extension stops its page modifications and requests. Uninstalling removes its local extension storage.</p><p>Removing the extension or its local data does not delete records or affiliate cookies independently held by marketplaces. Use the browser’s site-data controls or contact those services for that data.</p></section>
+<section class="card"><h2>Security and data use</h2><p>Research calculations run locally. Network requests use HTTPS. We do not sell your local research data, use it for personalised advertising, or transmit it to a developer-operated analytics service. No browser extension or network service can guarantee absolute security.</p></section>
+<section class="card"><h2>Children</h2><p>The extension is a shopping and product-research tool and is not directed to children. We do not knowingly collect children’s personal information through a developer-operated service.</p></section>
+<section class="card"><h2>Changes to this policy</h2><p>We will update this page and its effective date when the extension’s data handling changes. Review this policy when updating the extension.</p></section>
+<section class="card contact"><h2 style="justify-content:center">Contact</h2><p>For privacy questions or concerns:</p><a class="mail" href="mailto:codesurgeofficial@gmail.com">codesurgeofficial@gmail.com</a></section></main><footer>AAE Dropship · Privacy Policy<br>This extension is independent and is not affiliated with or endorsed by AliExpress, Amazon, eBay or Alibaba.</footer></body></html>
