@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Find Similar Products - Search by Image</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --brand: #2563eb;
+    --brand-2: #1e40af;
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --chip-bg: #eff6ff;
+    --chip-text: #1d4ed8;
+    --good: #10b981;
+    --good-bg: #ecfdf5;
+    --code-bg: #f3f4f6;
+    --shadow: 0 1px 3px rgba(17, 24, 39, .06), 0 10px 30px -12px rgba(17, 24, 39, .12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1020;
+      --card: #151b2e;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #252d44;
+      --chip-bg: #262c4a;
+      --chip-text: #c7d2fe;
+      --good: #34d399;
+      --good-bg: #0d2b22;
+      --code-bg: #1f2637;
+      --shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 10px 30px -12px rgba(0, 0, 0, .6);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+    color: #fff;
+    padding: 3.5rem 1.25rem 5.5rem;
+    text-align: center;
+  }
+  .hero .badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, .16);
+    border: 1px solid rgba(255, 255, 255, .3);
+    border-radius: 999px;
+    padding: .3rem 1rem;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-bottom: 1.1rem;
+  }
+  .hero h1 {
+    margin: 0 auto;
+    max-width: 620px;
+    font-size: clamp(1.5rem, 4.5vw, 2.2rem);
+    line-height: 1.25;
+    font-weight: 800;
+    letter-spacing: -.02em;
+  }
+  .hero .updated {
+    margin-top: .9rem;
+    font-size: .9rem;
+    opacity: .85;
+  }
+
+  /* Layout */
+  .wrap {
+    max-width: 760px;
+    margin: -3.2rem auto 0;
+    padding: 0 1.25rem 4rem;
+  }
+
+  /* Summary card */
+  .summary {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 1.25rem;
+    text-align: center;
+  }
+  .summary p {
+    margin: 0 0 1rem;
+    font-size: 1.05rem;
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    justify-content: center;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    background: var(--good-bg);
+    color: var(--good);
+    border-radius: 999px;
+    padding: .35rem .85rem;
+    font-size: .85rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .chip svg { flex: none; }
+
+  /* Sections */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.75rem;
+    margin-top: 1.25rem;
+  }
+  .card h2 {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    margin: 0 0 .75rem;
+    font-size: 1.15rem;
+    letter-spacing: -.01em;
+  }
+  .card h2 .icon {
+    flex: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--chip-bg);
+    color: var(--chip-text);
+  }
+  .card p { margin: .6rem 0; }
+  .card ol { margin: .6rem 0; padding-left: 1.3rem; }
+  .card li { margin: .35rem 0; }
+
+  code {
+    background: var(--code-bg);
+    padding: .12em .4em;
+    border-radius: 6px;
+    font-size: .88em;
+  }
+  a { color: var(--brand); font-weight: 600; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  @media (prefers-color-scheme: dark) { a { color: #a5b4fc; } }
+
+  .contact {
+    text-align: center;
+  }
+  .contact .mail {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: .4rem;
+    background: var(--chip-bg);
+    color: var(--chip-text);
+    border-radius: 999px;
+    padding: .5rem 1.2rem;
+    font-weight: 600;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: .85rem;
+    padding: 0 1.25rem 2.5rem;
+  }
+
+  
+  .card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: .8rem 0;
+    font-size: .92rem;
+  }
+  .card th, .card td {
+    border: 1px solid var(--border);
+    padding: .5rem .65rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .card th { background: var(--chip-bg); color: var(--chip-text); font-weight: 600; }
+  .card ul { margin: .6rem 0; padding-left: 1.3rem; }
+  .card h3 { margin: 1.1rem 0 .3rem; font-size: 1rem; }
+  /* A table is wider than a phone: let it scroll on its own rather than the page. */
+  .scroll { overflow-x: auto; }
+</style>
+</head>
+<body><header class="hero"><span class="badge">Find Similar Products</span><h1>Privacy Policy</h1><p>Find Similar Products - Search by Image</p><p class="updated">Last updated: 24 November 2026 (version 1.0.0)</p></header><main class="wrap">
+<section class="summary"><p>Find Similar Products - Search by Image is a browser extension that finds products on AliExpress, Alibaba.com and 1688.com that look like an image you choose, and similar listings on Amazon and eBay. This policy says what the extension reads, where it keeps it, and what leaves your computer.</p><p><strong>Short version: your images go from your browser straight to Alibaba Group's own search services, never to us. Amazon and eBay never receive your image, only the title of the best match, as an ordinary store search. Everything the extension saves — recent searches, saved products, price history, settings — stays in your browser on your computer. There is no account and no advertising. Two things are not local, and this policy states both: AliExpress links you click carry our affiliate tag, and anonymous usage counts are sent to our server only after you agree. Neither carries your images, searches, name, address or browsing history.</strong></p></section>
+<section class="card">
+<h2>What the extension handles, and where it goes</h2>
+<h3>1. Images you choose to search</h3>
+<p>A search starts only when you act: the search button on an image you point at, the right-click item on an image, selecting an area of the page, pasting or dropping an image, picking a file, or giving the address of an image.</p>
+<ul><li>The image is converted inside your browser and sent to Alibaba Group's search services to find matching products: <code>open-s.alibaba.com</code>, <code>www.alibaba.com</code>, AliExpress's own search (<code>acs.aliexpress.com</code> and AliExpress pages) and 1688's (<code>s.1688.com</code>, <code>h5api.m.1688.com</code>).</li><li>A site you untick in the popup or the settings page is never sent your image, neither in a search you run nor in a price check.</li><li>Only your default site (AliExpress unless you pick another in the popup) is searched straight away. The other image sites are sent your image only when you open their tab on the results page.</li><li>It is held in the browser's session storage only so the results page can show and retry that search. Session storage is cleared when you close the browser.</li><li>It is never sent to us.</li></ul>
+<h4>Amazon and eBay: a product title, not your image</h4>
+<p>Amazon and eBay have no image search the extension can use, so they are searched by text, and only when you open their tab on the results page:</p>
+<ul><li>The title of the best AliExpress (or, failing that, Alibaba.com) match is cut to its first few words and searched on Amazon and eBay, as if you had typed it into their search box. <strong>Your image is never sent to Amazon or eBay.</strong></li><li>The store is the one for the country you pick in Settings ("Amazon &amp; eBay country"; the first guess comes from your browser's language), for example <code>amazon.de</code> and <code>ebay.de</code>.</li><li>The request is made from your browser with your own cookies for that store, as an ordinary visit to its search page would be. If you are signed in there, the store can link the search to your account, as it would for a search you typed.</li><li>The result page is read inside the extension to list the products; nothing from it is sent to us.</li><li>Untick Amazon or eBay in the popup or Settings and it is not contacted.</li></ul>
+<h3>2. Stored on your device only</h3>
+<p>All of the following stays in the extension's own storage in your browser. None of it is sent to us or to anyone else.</p>
+<div class="scroll"><table><thead><tr><th>What</th><th>Kept for</th></tr></thead><tbody><tr><td>Your last 15 searches: a 96×96 px thumbnail and a copy at most 512 px on its longest side, so a past search can be run again</td><td>Until pushed out by newer searches, or <strong>Clear</strong></td></tr><tr><td>Cached results</td><td>Six hours</td></tr><tr><td>A daily search count, for the number on the toolbar icon</td><td>Resets daily</td></tr><tr><td>Your settings (sites to search, default site, Amazon &amp; eBay country, side panel or tab, button on images, price check interval, appearance, whether you answered the questions on the welcome page)</td><td>Until you change them</td></tr><tr><td>Products you save (title, price, minimum order, seller, rating, photo address, link, folder name) and up to four products queued for comparison. No image file is copied</td><td>Until you remove them or press <strong>Clear all</strong></td></tr><tr><td>Price history for saved products, if you turn on price tracking: a date and an approximate US dollar price, at most 30 per product</td><td>Deleted with the product</td></tr></tbody></table></div>
+<p>Exporting a CSV builds the file in your browser and saves it with your download; it is not uploaded.</p>
+<h3>3. Price tracking — off unless you switch it on</h3>
+<p>With tracking on, every few hours the extension re-runs the ordinary image search for at most four saved products, using each product's own photo. A saved Amazon or eBay product is checked instead by searching its own title on the store it came from. It contacts nothing beyond the search services in section 1 and the site that hosts the photo. If a price falls far enough it can show a browser notification; that permission is optional and asked for separately.</p>
+<h3>4. The button on images</h3>
+<p>When you switch it on and grant access to all sites (below), a small script is added to pages you visit so the button is there when your pointer reaches a picture. It watches where your pointer is and draws a button. It reads no page content and sends nothing until you press it. Switch either off and the script is removed.</p>
+<h3>5. Cookies and request headers</h3>
+<ul><li>Alibaba's search API accepts a request only with Alibaba's own <code>cna</code> cookie. The extension reads it on <code>alibaba.com</code> and, if it is missing, asks Alibaba to issue one.</li><li>AliExpress's and 1688's search services require a token from their own <code>_m_h5_tk</code> cookie on their API hosts to sign a request. The extension reads it there and sends it only back to that same service.</li><li>For 1688, the extension sets the <code>Referer</code> and <code>Origin</code> headers that 1688's service expects. This applies only to the extension's own search requests to 1688, never to pages you browse.</li></ul>
+<ul><li>Searches on Amazon and eBay (section 1) carry your own cookies for that store, as a visit to its search page would. The extension does not read those cookies.</li></ul>
+<p>None of these values is stored by the extension or sent to us.</p>
+<h3>6. Affiliate links on AliExpress</h3>
+<p>This is how the extension is paid for, and it is on in the Chrome version at all times.</p>
+<ul><li>On AliExpress pages (<code>aliexpress.com</code>, <code>aliexpress.us</code>), when you press on a link to AliExpress, the extension changes it at that moment to go to the same page through our AliExpress affiliate link (<code>s.click.aliexpress.com</code>).</li><li>Product links in the extension's own results, side panel, comparison and saved pages are our affiliate links from the start.</li><li>The extension never opens, redirects or reloads a page on its own; a link only takes effect when you click it.</li><li><strong>This includes links that already carry another affiliate partner's code</strong>: that code is removed and replaced with ours. Links from AliExpress's influencer and creator programmes are left exactly as they are.</li><li><strong>The product, the seller and the price you pay are unchanged.</strong> If AliExpress pays a commission on your purchase, it comes out of AliExpress's margin, not your price.</li><li>The affiliate link is part of the extension's package. Building it sends no request to us. When the usage counts below are on, the extension notes locally that a link was changed — not which link — and that note is part of the counts.</li><li>The Firefox version contains no affiliate code at all.</li></ul>
+<h3>7. Anonymous usage counts — only if you agree</h3>
+<p>The welcome page asks once. Only if you choose <strong>Allow</strong> does the extension send, to our own server at <code>shoppingassistant.xyz</code> and at most every half hour:</p>
+<ul><li>that this install is still active, once a day;</li><li>when you open an AliExpress product page: the product number, and whether the visit came through our affiliate link, another partner's (with that partner's link code), or none;</li><li>when you open an AliExpress checkout page and when an order is confirmed: whose affiliate link, if any, the visit carried. An order is identified only by a one-way hash of its number mixed with your random install id; we cannot turn it back into an AliExpress order number.</li></ul>
+<p>Each batch also carries the extension's version, the browser's name and a random install id created on your device. <strong>No images, searches, saved products, prices, names, addresses, page addresses or browsing history are sent, and there is no account.</strong> You can switch the counts off at any time in Settings → Usage counts. That throws away anything not yet sent and asks our server to delete what this install already sent. The Firefox version never sends these counts.</p>
+</section>
+<section class="card">
+<h2>Permissions</h2>
+<div class="scroll"><table><thead><tr><th>Permission</th><th>Why</th></tr></thead><tbody><tr><td><code>activeTab</code></td><td>To capture the area you select and show the search overlay, on the tab you just acted on, after you act</td></tr><tr><td><code>scripting</code></td><td>To add the selection and overlay code when you start a search, the button on images while it is on, and the affiliate script on AliExpress pages (section 6)</td></tr><tr><td><code>contextMenus</code></td><td>The right-click search item</td></tr><tr><td><code>storage</code></td><td>The on-device data in section 2</td></tr><tr><td><code>alarms</code></td><td>The price check while tracking is on, and the half-hourly send of usage counts if you allowed them</td></tr><tr><td><code>cookies</code></td><td>The marketplace cookies in section 5</td></tr><tr><td><code>declarativeNetRequestWithHostAccess</code></td><td>The 1688 request headers in section 5</td></tr><tr><td><code>sidePanel</code></td><td>To show results beside the page instead of in a new tab, if you choose that</td></tr><tr><td><code>offscreen</code> (Chrome)</td><td>To read an Amazon or eBay result page into a product list; Chrome's background worker cannot read HTML itself. The hidden page is closed when the search ends</td></tr><tr><td><code>notifications</code> (optional)</td><td>Price-drop alerts, asked for when you turn them on</td></tr><tr><td><code>*.alibaba.com</code>, <code>*.aliexpress.com</code>, <code>*.aliexpress.us</code>, <code>*.1688.com</code></td><td>Where the searches go, and the AliExpress pages in section 6</td></tr><tr><td>Amazon sites (<code>amazon.com</code>, <code>amazon.co.uk</code>, <code>amazon.de</code> and the other national Amazon sites) and eBay sites (<code>ebay.com</code>, <code>ebay.co.uk</code>, <code>ebay.de</code> and the other national eBay sites)</td><td>The title searches in section 1, on the country's store you chose</td></tr><tr><td><code>shoppingassistant.xyz</code></td><td>Our server, for the usage counts in section 7, only if you allowed them</td></tr><tr><td>All sites (optional, off by default)</td><td>To read an image you right-click or point at, which can be hosted anywhere. Asked for when you turn it on; selecting an area, pasting, dropping and uploading work without it</td></tr></tbody></table></div>
+</section>
+<section class="card">
+<h2>What we do not do</h2>
+<ul><li>We do not sell or transfer your data to anyone.</li><li>We do not use your data for any purpose other than the extension's features, and not for advertising or to determine creditworthiness.</li><li>We do not read, record or send your browsing history.</li><li>We keep nothing on our server except the usage counts you allowed, and those are deleted when you switch them off.</li></ul>
+</section>
+<section class="card">
+<h2>Third parties</h2>
+<p>Alibaba Group (Alibaba.com, AliExpress, 1688.com) receives the images you search and the search requests, because that is where the products are. Amazon and eBay receive the title searches in section 1, with your cookies for their site. Their handling of it is governed by their own privacy policies.</p>
+</section>
+<section class="card">
+<h2>Children</h2>
+<p>The extension is a shopping tool and is not directed to children under 13.</p>
+</section>
+<section class="card">
+<h2>Changes</h2>
+<p>If what the extension handles changes, this page is updated before the new version is published, and the extension asks again before sending anything new.</p>
+</section>
+<section class="card">
+<h2>Contact</h2>
+<p>Questions about this policy or your data: <strong>anwarazim03@gmail.com</strong></p>
+<p><em>Find Similar Products - Search by Image is independent and not affiliated with, endorsed by or sponsored by AliExpress, Alibaba Group, Amazon or eBay.</em></p>
+</section>
+</main>
+<footer>Generated from docs/store/privacy-policy.md in the extension's source.</footer>
+</body>
+</html>
